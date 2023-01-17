@@ -1,0 +1,81 @@
+{
+  "root": true,
+  "env": {
+      "browser": false,
+      "node": true,
+      "es2021": true,
+      "jest": true
+  },
+  "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "airbnb-base",
+      "plugin:editorconfig/noconflict",
+      "plugin:mocha/recommended",
+      "airbnb-typescript/base"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+      {
+          "files": ["*.ts", "tests/**/*.tests.js"],
+          "rules": {
+              "prefer-arrow-callback": "off",
+              "func-names": "off",
+              "max-lines-per-function": "off"
+            }
+      }
+  ],
+  "parserOptions": {
+      "ecmaVersion": 2019,
+      "sourceType": "module",
+      "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "editorconfig"],
+  "rules": {
+      "class-methods-use-this": [0],
+      "no-underscore-dangle": "off",
+      "no-console": 1,
+      "camelcase": "warn",
+      "arrow-parens": [2, "always"],
+      "quotes": [2, "single"],
+      "implicit-arrow-linebreak": "off",
+      "consistent-return": "off",
+      "no-unused-vars": [
+      "error",
+      {
+          "argsIgnorePattern": "^_",
+          "ignoreRestSiblings": true
+      }
+      ],
+      "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+              "argsIgnorePattern": "^_",
+              "ignoreRestSiblings": true
+          }
+      ],
+      "object-curly-newline": "off",
+      "max-params": ["error", 6],
+      "max-lines": ["error", 250],
+      "max-lines-per-function": [
+      "error",
+      {
+          "max": 20,
+          "skipBlankLines": true,
+          "skipComments": true
+      }
+      ],
+      "max-len": [
+      "error",
+      {
+          "code": 100
+      },
+      {
+          "ignoreComments": true
+      }
+      ],
+      "complexity": ["error", 5],
+      "import/no-extraneous-dependencies": ["off"],
+      "lines-between-class-members": "off",
+      "@typescript-eslint/lines-between-class-members": ["off"]
+  }
+}
