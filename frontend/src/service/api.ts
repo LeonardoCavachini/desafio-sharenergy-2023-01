@@ -12,3 +12,14 @@ export async function fetchLogin(username: string, password: string) {
   );
   return data.token;
 };
+
+export async function fetchRandomUser(page:number, token: string) {
+  const { data } = await axios.post(
+    "http://localhost:3001/randomUser", {page},{
+      headers: {
+        'Authorization': token
+      }
+    }
+  );
+  return data
+};

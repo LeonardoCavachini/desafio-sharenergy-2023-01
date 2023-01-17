@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import UserController from '../Controllers/UserController';
+import RandomUserController from '../Controllers/RandomUserController';
 import LoginHandle from '../Middlewares/LoginHandler';
 import ValidateJWT from '../auth/validateJWT';
 
@@ -33,6 +34,12 @@ routes.delete(
   '/user/:id',
   ValidateJWT,
   (req, res, next) => new UserController(req, res, next).delete(),
+);
+
+routes.post(
+  '/randomUser',
+  ValidateJWT,
+  (req, res, next) => new RandomUserController(req, res, next).randomUser(),
 );
 
 export default routes;
