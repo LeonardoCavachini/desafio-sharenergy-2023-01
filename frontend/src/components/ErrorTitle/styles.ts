@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Conatiner = styled.div`
-
+  
 `
 
 export const title = styled.h1`

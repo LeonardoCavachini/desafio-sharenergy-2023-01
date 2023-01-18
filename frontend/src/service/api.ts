@@ -34,3 +34,14 @@ export async function fetchHttpCats(httpCode:string, token: string) {
   );
   return data
 };
+
+export async function fetchRandomDogs(token: string) {
+  const { data } = await axios.get(
+    "http://localhost:3001/randomDogs",{
+      headers: {
+        'Authorization': token
+      }
+    }
+  );
+  return `https://random.dog/${data}`
+};
