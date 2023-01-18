@@ -32,6 +32,11 @@ class UserController {
     }
   }
 
+  public async getAll() {
+    const users = await this.service.showAll();
+    return this.res.status(200).json(users);
+  }
+
   public async login() {
     const { username } = this.req.body;
     const token = await this.service.login(username);

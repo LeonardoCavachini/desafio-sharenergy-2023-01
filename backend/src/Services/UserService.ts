@@ -27,8 +27,13 @@ class UserService {
 
   async login(username: string) {
     const token = this.createToken(username);
-
     return { token };
+  }
+
+  async showAll() {
+    const userODM = new UserODM();
+    const newUser = await userODM.getAll();
+    return newUser;
   }
 
   public async getById(id: string) {

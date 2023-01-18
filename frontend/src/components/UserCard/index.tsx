@@ -1,17 +1,29 @@
 import * as styled from './styles';
-import { SectionCard } from '../SectionCard'
+import { BiTrash } from "react-icons/bi";
+import {fetchDeleteUser} from '../../service/api'
 
-const UserRandomCard = ({props}:any) => {
-  const {name, picture, email, login, dob} = props
+const UserCard = ({props}:any, {icon}: any) => {
+  const {_id, name, tel, email, cpf, address} = props
+
+  const BtnDelete = async(e: any) => {
+    e.stopPropagation()
+    const localToken = JSON.parse(localStorage.getItem('token') as string);
+    await fetchDeleteUser(_id, localToken)
+    location.reload()
+  }
   
-  return (
-      <styled.Container>
-        <styled.title>{`${name.title} ${name.first} ${name.last}`}</styled.title>
-        <styled.image src={picture.large} alt='user-image'/>
-        <styled.title>{login.username}</styled.title>
-        <styled.title>{email}</styled.title>
-        <styled.title>{`${dob.age} anos`}</styled.title>
-      </styled.Container>
+  return(
+    <styled.Container>
+    <styled.title>{`Nome: ${name}`}</styled.title>
+    <styled.title>{`tel: ${tel}`}</styled.title>
+    <styled.title>{`Email: ${email}`}</styled.title>
+    <styled.title>{`CPF: ${cpf}`}</styled.title>
+    <styled.title>{`Endereço: ${address}`}</styled.title>
+    <styled.BtnDiv>
+      <styled.BtnDel onClick={(e) => BtnDelete(e)}><BiTrash size={25}/></styled.BtnDel>
+    </styled.BtnDiv>
+  </styled.Container>
   )
 }
-export default UserRandomCard
+
+export default UserCard;

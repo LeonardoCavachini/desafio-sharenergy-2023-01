@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import { fetchRandomUser } from '../service/api';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar'
-import UserRandomCard from '../components/UserCard';
+import UserRandomCard from '../components/RandomUserCard';
 import { SectionCard } from '../components/SectionCard';
 import { UsersRandom } from '../interfaces';
 import { PaginationContainer } from '../components/PaginationContainer';

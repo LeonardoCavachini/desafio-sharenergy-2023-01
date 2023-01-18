@@ -14,6 +14,12 @@ routes.post(
   (req, res, next) => new UserController(req, res, next).login(),
 );
 
+routes.get(
+  '/users',
+  ValidateJWT,
+  (req, res, next) => new UserController(req, res, next).getAll(),
+);
+
 routes.post(
   '/user/register',
   ValidateJWT,

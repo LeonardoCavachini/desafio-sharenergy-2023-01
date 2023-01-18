@@ -14,4 +14,13 @@ export interface UsersRandom {
   login:{
       username:string
   }
+};
+
+export interface Users {
+  _id: string;
+  name: string;
+  tel: string;
+  email: string;
+  cpf: string;
+  address: string;
 }

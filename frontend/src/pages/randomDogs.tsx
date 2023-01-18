@@ -30,7 +30,7 @@ const RandomDogs = () => {
       <Header />
       
       <SectionContainer>
-      <RefreshBtn onClick={Refresh} />
+      <RefreshBtn onClick={Refresh}/>
         <ImageCard><img src={dog} alt='Dog-image' /></ImageCard>
       </SectionContainer>
       
