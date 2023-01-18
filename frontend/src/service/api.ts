@@ -23,3 +23,14 @@ export async function fetchRandomUser(page:number, token: string) {
   );
   return data
 };
+
+export async function fetchHttpCats(httpCode:string, token: string) {
+  const { data } = await axios.get(
+    `http://localhost:3001/httpCat/${httpCode}`,{
+      headers: {
+        'Authorization': token
+      }
+    }
+  );
+  return data
+};

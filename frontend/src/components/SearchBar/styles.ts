@@ -17,7 +17,7 @@ export const InputLabel = styled.label`
 export const InputContainer = styled.div`
   position: relative;
   width: 10%;
-  margin: 0 auto;
+  margin: 3rem auto;
   display: flex;
   flex-direction: column;
   height: 4.5rem;

@@ -1,8 +1,9 @@
 import styled from "styled-components"
 
 export const box = styled.header`
+  width: 100%;
   background: #301860;
-  min-height: 15vh;
+  min-height: 13vh;
   display: flex;
   
 `

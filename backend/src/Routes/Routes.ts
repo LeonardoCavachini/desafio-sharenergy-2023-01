@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import UserController from '../Controllers/UserController';
 import RandomUserController from '../Controllers/RandomUserController';
+import HttpCatsController from '../Controllers/HttpCats';
 import LoginHandle from '../Middlewares/LoginHandler';
 import ValidateJWT from '../auth/validateJWT';
 
@@ -40,6 +41,12 @@ routes.post(
   '/randomUser',
   ValidateJWT,
   (req, res, next) => new RandomUserController(req, res, next).randomUser(),
+);
+
+routes.get(
+  '/httpCat/:httpCode',
+  ValidateJWT,
+  (req, res, next) => new HttpCatsController(req, res, next).httpCat(),
 );
 
 export default routes;

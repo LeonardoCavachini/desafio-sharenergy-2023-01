@@ -24,8 +24,8 @@ const Form = () => {
   const handleSubmit = async (event:any) => {
     event.preventDefault();
     if (remember) {
-      Cookies.set('username', username, { expires: 3 })
-      Cookies.set('password', password, { expires: 3 })
+      Cookies.set('username', username, { expires: 1 })
+      Cookies.set('password', password, { expires: 1 })
     }
     try {
       const getToken = fetchLogin(username,password)
@@ -35,8 +35,10 @@ const Form = () => {
     } catch (err){
       setError('Nome ou Senha incorretos.')
     }
-    
-   
+    useEffect(() => {
+      setError('')
+    },[setUsername])
+   console.log(username)
   }
 
   return (
