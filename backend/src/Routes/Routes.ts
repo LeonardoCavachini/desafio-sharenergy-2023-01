@@ -52,7 +52,7 @@ routes.post(
 
 routes.get(
   '/httpCat/:httpCode',
-  // ValidateJWT,
+  ValidateJWT,
   (req, res, next) => new HttpCatsController(req, res, next).httpCat(),
 );
 
