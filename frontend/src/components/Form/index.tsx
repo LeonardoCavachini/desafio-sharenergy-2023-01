@@ -30,15 +30,16 @@ const Form = () => {
     try {
       const getToken = fetchLogin(username,password)
       saveLocalStorage(await getToken, 'token')
-
       navigate("/RandomUsers")
     } catch (err){
       setError('Nome ou Senha incorretos.')
+      setTimeout(() => {
+        location.reload()
+      },700)
     }
     useEffect(() => {
       setError('')
     },[setUsername])
-   console.log(username)
   }
 
   return (

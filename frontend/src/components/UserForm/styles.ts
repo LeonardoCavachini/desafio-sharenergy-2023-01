@@ -29,6 +29,7 @@ export const Form = styled.form`
   @media (max-width: 768px) {
     padding: 5rem;
     min-height: 50vh;
+    margin-top: 2rem;
   }
   @media (min-width: 1045px) and (max-width: 1680px) {
     padding: 4rem;
@@ -50,7 +51,6 @@ export const InputLabel = styled.label`
 `;
 export const InputContainer = styled.div`
   position: relative;
-  width: 100%;
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
@@ -79,7 +79,6 @@ export const Btn = styled.button`
   }
 `;
 export const Footer = styled.div`
-  width: 100%;
   height: 3rem;
   display: flex;
   align-items: center;

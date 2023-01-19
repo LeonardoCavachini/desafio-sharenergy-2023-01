@@ -6,11 +6,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: 1rem;
-  width:37.5rem;
+  width: 100vw;
+  max-width: 15vw;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  @media (max-width: 768px) {
+    max-width: 90vw;
+  }
   @media (min-width: 1045px) and (max-width: 1680px) {
-    max-width: 100%;
-    
+    max-width: 23vw;
   }
   
 `;
@@ -28,5 +31,4 @@ export const title = styled.h1`
 export const image = styled.img`
   border-radius: 3rem;
   margin-top:3rem;
-  width:16rem;
 `;

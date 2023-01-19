@@ -7,12 +7,14 @@ import { SectionCard } from '../components/SectionCard';
 import { UsersRandom } from '../interfaces';
 import { PaginationContainer } from '../components/PaginationContainer';
 import {PaginationRight, PaginationLeft } from '../components/Pagination';
+import { SectionContainer } from '../components/SectionContainer'
 
 const RandomUsers = () => {
 
   const [user, setUser] = useState<UsersRandom[]>([]);
-  const [search, setSearch] = useState('')
-  const [page, setPage] = useState(1)
+  const [search, setSearch] = useState('');
+  const [page, setPage] = useState(1);
+  const [open, setOpen] = useState(false);
 
   const searchUser = () => {
     const findUser = user.filter(user => 
@@ -58,19 +60,19 @@ const RandomUsers = () => {
 
   return (
     <>
-      <Header />
+      <Header open={open} setOpen={setOpen}/>
       <SearchBar onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           setSearch(e.target.value);
-        }}/>
-      <SectionCard>
-        {user.map((elem, idx) => <div key={idx}><UserRandomCard props={elem}/></div>)}
-      </SectionCard>
+      }}/>
+      <SectionContainer>
+        <SectionCard>
+          {user.map((elem, idx) => <UserRandomCard key={idx} props={elem}/>)}
+        </SectionCard>
+      </SectionContainer>
       <PaginationContainer>
-      <PaginationLeft onClick={pageLeft}/>
+        <PaginationLeft onClick={pageLeft}/>
         <PaginationRight onClick={pageRight}/>
-        
       </PaginationContainer>
-      
     </>
   )
 }

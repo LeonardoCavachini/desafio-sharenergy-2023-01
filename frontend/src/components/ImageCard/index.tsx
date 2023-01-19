@@ -3,7 +3,9 @@ import * as styled from './styles';
 const ImageCard = ({children}: any) => {
   return (
     <>
-      <styled.imageBox>{children}</styled.imageBox>
+      <styled.imageBox>
+        <styled.Img src={children} alt='image' />
+      </styled.imageBox>
     </>
   )
 };

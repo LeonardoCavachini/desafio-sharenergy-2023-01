@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-  min-height: 80vh;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   @media (max-width: 768px) {
-    min-height: 70vh;
+    width: 20rem;
+    margin-left: 8rem;
   }
   @media (min-width: 1045px) and (max-width: 1680px) {
-    min-height: 85vh;
+    margin-left: 55rem;
+    margin-top: 2rem;
   }
 `;
 
 export const Form = styled.form`
-  min-height: 30vh;
-  width: 25rem;
   padding: 13rem;
   background: #F5F5F5;
   border-radius: 5%;
@@ -28,7 +28,6 @@ export const Form = styled.form`
   
   @media (max-width: 768px) {
     padding: 5rem;
-    min-height: 50vh;
   }
   @media (min-width: 1045px) and (max-width: 1680px) {
     padding: 4rem;
@@ -50,7 +49,6 @@ export const InputLabel = styled.label`
 `;
 export const InputContainer = styled.div`
   position: relative;
-  width: 100%;
   margin: 2rem 0;
   display: flex;
   flex-direction: column;
@@ -73,13 +71,11 @@ export const Btn = styled.button`
   border-radius: 0.4rem;
   height: 3.5rem;
   background-color: #00A2A2;
-  width: 100%;
   &:hover {
     background: #ccc;
   }
 `;
 export const Footer = styled.div`
-  width: 100%;
   height: 3rem;
   display: flex;
   align-items: center;

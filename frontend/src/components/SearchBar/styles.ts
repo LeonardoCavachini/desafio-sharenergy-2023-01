@@ -17,7 +17,7 @@ export const InputLabel = styled.label`
 export const InputContainer = styled.div`
   position: relative;
   width: 10%;
-  margin: 3rem auto;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
   height: 4.5rem;
@@ -25,9 +25,17 @@ export const InputContainer = styled.div`
   border-width: 0.05rem;
   border-color: #ccc;
   border-radius: 8px;
-  padding: 0.5rem;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
   transition: 0.5s;
   &:hover {
     background: #ccc;
+  }
+  @media (min-width: 1045px) and (max-width: 1680px) {
+    width: 12%;
+  }
+
+  @media (max-width: 768px) {
+    width: 50%;
   }
 `;
