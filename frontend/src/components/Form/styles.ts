@@ -70,6 +70,7 @@ export const Btn = styled.button`
   font-weight: bold;
   border-radius: 0.4rem;
   height: 3.5rem;
+  width: 10rem;;
   background-color: #00A2A2;
   &:hover {
     background: #ccc;
