@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import {  useNavigate } from 'react-router-dom';
 import { fetchHttpCats } from '../service/api';
 import SearchBar from '../components/SearchBar';
 import Header from '../components/Header';
@@ -14,6 +15,15 @@ const Cats = () => {
   const [error, setError] = useState('')
   const [open, setOpen] = useState(false);
 
+  const navigate = useNavigate();
+
+  const checkToken = () => {
+    const token = JSON.parse(localStorage.getItem('token') as string)
+    if (!token) {
+      navigate('/');
+    }
+  }
+
   const LoadHttp = async() => {
     const token = JSON.parse(localStorage.getItem('token') as string)
     if (httpCode.length >= 3) {
@@ -26,6 +36,10 @@ const Cats = () => {
       }
     } 
   };
+  useEffect(() => {
+    checkToken()
+  },[])
+
   useEffect(() => {
     LoadHttp()
     setError('')

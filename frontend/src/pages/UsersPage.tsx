@@ -22,6 +22,13 @@ const UsersPage = () => {
     setUsersObj(getUsers)
   }
 
+  const checkToken = () => {
+    const token = JSON.parse(localStorage.getItem('token') as string)
+    if (!token) {
+      navigate('/');
+    }
+  }
+
   const createUser = () => {
     navigate('/Users/create');
   }
@@ -31,6 +38,7 @@ const UsersPage = () => {
   }
 
   useEffect(() => {
+    checkToken()
     loadUser()
   },[])
 

@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react';
+import {  useNavigate } from 'react-router-dom';
 import { fetchRandomUser } from '../service/api';
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar'
@@ -15,6 +16,15 @@ const RandomUsers = () => {
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [open, setOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const checkToken = () => {
+    const token = JSON.parse(localStorage.getItem('token') as string)
+    if (!token) {
+      navigate('/');
+    }
+  }
 
   const searchUser = () => {
     const findUser = user.filter(user => 
@@ -47,6 +57,7 @@ const RandomUsers = () => {
   }
 
   useEffect(() => {
+    checkToken()
     LoadRandomUsers()
   }, []);
 

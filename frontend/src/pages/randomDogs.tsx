@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import {  useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import { SectionContainer } from '../components/SectionContainer';
 import { SectionCard } from '../components/SectionCard';
@@ -9,6 +10,15 @@ import { fetchRandomDogs } from '../service/api';
 const RandomDogs = () => {
   const [dog, setDog] = useState('');
   const [open, setOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const checkToken = () => {
+    const token = JSON.parse(localStorage.getItem('token') as string)
+    if (!token) {
+      navigate('/');
+    }
+  }
 
   const getDog = async() => {
     const token = JSON.parse(localStorage.getItem('token') as string)
@@ -21,6 +31,7 @@ const RandomDogs = () => {
   }
 
   useEffect(() => {
+    checkToken()
     getDog()
   },[])
 
