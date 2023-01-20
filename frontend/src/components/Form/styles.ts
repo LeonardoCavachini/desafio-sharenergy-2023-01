@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-  margin-top: 2rem;
+  margin-top: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   @media (max-width: 768px) {
     width: 20rem;
-    margin-left: 8rem;
+    margin-top: 2rem;
+    margin-left: 7.6rem;
   }
   @media (min-width: 1045px) and (max-width: 1680px) {
     margin-left: 55rem;
