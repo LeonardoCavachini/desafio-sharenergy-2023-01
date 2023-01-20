@@ -14,7 +14,11 @@ SECRET_KEY=`digite uma senha qualquer`
 
 PORT=`digite uma porta caso queira usar uma específica`
 
-Este projeto precisa do docker para subr as aplicaçôes,volte para a pasta raiz, no seu terminal digite `docker compose up `.
+## Rodando a aplicação.
+
+- Entre na pasta `Backend` e rode no terminal `npm i` agora volte a pasta raiz.
+
+Este projeto precisa do docker para subr as aplicaçôes,na pasta raiz, no seu terminal digite `docker compose up `.
 Prontinho agora você ja pode brincar com a aplicação.
 caso não tenha o **Docker** instalado, acesse [Docker](https://www.docker.com/) para mais detalhes.
 
