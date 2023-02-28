@@ -1,7 +1,5 @@
 # Desafio para o processo seletivo SHARENERGY 2023/01
 
-### <a href='https://www.youtube.com/watch?v=vyPaZyHXmsI'>VER EXPLICAÇÃO EM VIDEO</a>
-
 ## Rodando a aplicação
 
 ### Setup inicial
